@@ -32,3 +32,63 @@
   .whatsapp-note{font-size:16px}
 }
 
+/* ==========================
+   Modern Animated Button
+========================== */
+
+.btn-modern {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 35px;
+    border-radius: 12px;
+    background: #0b1733;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    transition: .35s ease;
+    z-index: 1;
+}
+
+.btn-modern::before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    background:conic-gradient(
+        #00f7ff,
+        #7c3aed,
+        #ec4899,
+        #00f7ff
+    );
+    animation:rotateBorder 3s linear infinite;
+    z-index:-2;
+}
+
+.btn-modern::after{
+    content:"";
+    position:absolute;
+    inset:3px;
+    background:#081122;
+    border-radius:10px;
+    z-index:-1;
+}
+
+.btn-modern:hover{
+    transform:translateY(-3px);
+    color:#fff;
+    box-shadow:0 0 25px rgba(0,247,255,.4);
+}
+
+@keyframes rotateBorder{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
