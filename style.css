@@ -1,180 +1,891 @@
-/* ===========================================
-   ARGHAWAN CLINIC MODERN BUTTON
-=========================================== */
+/* ==========================================
+   ARGHAWAN CURATIVE CLINIC
+   Professional Medical Website
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#ffffff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+/* ===========================
+   TOP BAR
+=========================== */
+
+.topbar{
+    background:#061b44;
+    color:#fff;
+    font-size:14px;
+}
+
+.topbar-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-height:42px;
+}
+
+.topbar a{
+    color:#fff;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.nav-wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:82px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#0b5ed7;
+}
+
+.logo-mark{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    background:#0b5ed7;
+    color:#fff;
+    font-size:22px;
+}
+
+.logo strong{
+    display:block;
+    font-size:22px;
+}
+
+.logo small{
+    color:#6b7280;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:10px;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav a{
+    color:#374151;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav a:hover{
+    color:#0b5ed7;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
 
 .btn{
     position:relative;
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    padding:16px 34px;
-    border:none;
+    gap:10px;
+    padding:15px 34px;
     border-radius:14px;
-    background:#071b3b;
-    color:#fff;
-    font-size:16px;
-    font-weight:700;
-    text-decoration:none;
+    border:none;
     cursor:pointer;
+    color:#fff;
+    font-weight:700;
     overflow:hidden;
-    transition:.35s ease;
+    transition:.35s;
     z-index:1;
 }
 
-/* Animated Border */
-
 .btn::before{
+
     content:"";
+
     position:absolute;
+
     inset:-3px;
+
     border-radius:16px;
 
     background:conic-gradient(
-        from 0deg,
+
         #00f7ff,
-        #009dff,
-        #4f46e5,
+
+        #0b5ed7,
+
+        #5b21b6,
+
         #00f7ff
+
     );
 
-    animation:borderRotate 3s linear infinite;
+    animation:borderSpin 3s linear infinite;
 
     z-index:-2;
-}
 
-/* Inner Background */
+}
 
 .btn::after{
-    content:"";
-    position:absolute;
-    inset:3px;
-    border-radius:12px;
-    background:#071b3b;
-    z-index:-1;
-}
 
-/* Hover */
+    content:"";
+
+    position:absolute;
+
+    inset:3px;
+
+    border-radius:12px;
+
+    background:#0b5ed7;
+
+    z-index:-1;
+
+}
 
 .btn:hover{
 
     transform:translateY(-4px);
 
-    color:white;
-
     box-shadow:
-        0 0 12px #00f7ff,
-        0 0 30px rgba(0,247,255,.5),
-        0 0 60px rgba(79,70,229,.4);
-}
+    0 0 20px rgba(0,247,255,.5),
+    0 0 40px rgba(11,94,215,.3);
 
-/* Click */
+}
 
 .btn:active{
+
     transform:scale(.97);
+
 }
 
-/* Animation */
-
-@keyframes borderRotate{
+@keyframes borderSpin{
 
     from{
+
         transform:rotate(0deg);
+
     }
 
     to{
+
         transform:rotate(360deg);
+
     }
 
 }
 
-
 /* ===========================
-   PRIMARY BUTTON
+   HERO
 =========================== */
 
-.btn-primary{
+.hero{
 
-    background:#0b5ed7;
+    position:relative;
+
+    min-height:720px;
+
+    display:flex;
+
+    align-items:center;
+
+    background:url("https://images.unsplash.com/photo-1588776814546-65d7d1954933?auto=format&fit=crop&w=2000&q=80")
+    center/cover;
+
 }
 
-.btn-primary::after{
+.hero-overlay{
 
-    background:#0b5ed7;
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        rgba(6,20,55,.92),
+        rgba(6,20,55,.55)
+    );
+
 }
 
+.hero-content{
 
-/* ===========================
-   WHITE BUTTON
-=========================== */
+    position:relative;
 
-.btn-white{
+    z-index:2;
 
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:90px 0;
+
+}
+
+.hero-copy{
+
+    max-width:680px;
+
+    color:white;
+
+}
+
+.hero h1{
+
+    font-size:70px;
+
+    line-height:1.05;
+
+    margin:25px 0;
+
+}
+
+.hero h1 span{
+
+    color:#53b5ff;
+
+}
+
+.hero p{
+
+    color:#dbeafe;
+
+    font-size:20px;
+
+    margin-bottom:35px;
+
+}
+
+.hero-actions{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}/* ==========================================
+   SECTIONS
+========================================== */
+
+.section{
+    padding:100px 0;
+}
+
+.section-label{
+    display:inline-block;
+    color:#0b5ed7;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.section h2{
+    font-size:48px;
+    color:#0f172a;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.section h2 span{
     color:#0b5ed7;
 }
 
-.btn-white::after{
+.section p{
+    color:#64748b;
+}
 
+/* ===========================
+   ABOUT
+=========================== */
+
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.section-image{
+    position:relative;
+}
+
+.section-image img{
+    height:550px;
+    width:100%;
+    object-fit:cover;
+    border-radius:22px;
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+
+.experience-badge{
+    position:absolute;
+    right:-20px;
+    bottom:30px;
+    background:#0b5ed7;
+    color:#fff;
+    padding:22px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(11,94,215,.3);
+}
+
+.experience-badge strong{
+    display:block;
+    font-size:26px;
+}
+
+.experience-badge span{
+    font-size:13px;
+    opacity:.9;
+}
+
+/* ===========================
+   CHECK LIST
+=========================== */
+
+.check-list{
+    list-style:none;
+    margin-top:30px;
+}
+
+.check-list li{
+    margin:15px 0;
+    font-weight:600;
+    color:#334155;
+}
+
+.check-list i{
+    color:#0b5ed7;
+    margin-right:10px;
+}
+
+/* ===========================
+   SERVICES
+=========================== */
+
+.services{
+    background:#f8fbff;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.service-card{
+    background:#fff;
+    border-radius:20px;
+    padding:35px;
+    transition:.35s;
+    border:1px solid #e6eef8;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.service-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 45px rgba(11,94,215,.15);
+}
+
+.service-icon{
+    width:65px;
+    height:65px;
+    display:grid;
+    place-items:center;
+    background:#eef5ff;
+    color:#0b5ed7;
+    border-radius:18px;
+    font-size:26px;
+    margin-bottom:22px;
+}
+
+.service-card h3{
+    margin-bottom:15px;
+    color:#0f172a;
+    font-size:22px;
+}
+
+.service-card p{
+    margin-bottom:20px;
+}
+
+.service-card a{
+    color:#0b5ed7;
+    font-weight:700;
+}
+
+/* ===========================
+   DOCTOR
+=========================== */
+
+.doctor-section{
     background:white;
 }
 
-
-/* ===========================
-   OUTLINE BUTTON
-=========================== */
-
-.btn-outline-white{
-
-    color:white;
+.doctor-card{
+    display:grid;
+    grid-template-columns:360px 1fr;
+    overflow:hidden;
+    border-radius:24px;
+    background:#f8fbff;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
 
-.btn-outline-white::after{
-
-    background:transparent;
-
-    border:2px solid rgba(255,255,255,.25);
+.doctor-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
+.doctor-info{
+    padding:50px;
+}
+
+.doctor-role{
+    color:#0b5ed7;
+    text-transform:uppercase;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.doctor-info h3{
+    margin:15px 0;
+    font-size:36px;
+    color:#0f172a;
+}
+
+.doctor-info p{
+    margin-bottom:25px;
+}
+
+.doctor-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.doctor-tags span{
+    background:#e8f1ff;
+    color:#0b5ed7;
+    padding:8px 14px;
+    border-radius:50px;
+    font-size:13px;
+    font-weight:700;
+}
 
 /* ===========================
-   LARGE BUTTON
+   GALLERY
 =========================== */
 
-.btn-lg{
+.gallery{
+    background:#f8fbff;
+}
 
-    padding:18px 42px;
+.gallery-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:18px;
+}
 
+.gallery-grid img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:18px;
+    transition:.35s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.04);
+}
+
+.gallery-large{
+    height:280px;
+}
+
+/* ===========================
+   REVEAL ANIMATION
+=========================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}/* ==========================================
+   APPOINTMENT
+========================================== */
+
+.appointment-page{
+    background:#f8fbff;
+}
+
+.appointment-page-inner{
+    max-width:1000px;
+}
+
+.appointment-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.appointment-heading h2{
+    font-size:50px;
+    color:#0f172a;
+    margin-bottom:20px;
+}
+
+.appointment-heading p{
+    color:#64748b;
     font-size:18px;
 }
 
-
-/* ===========================
-   SMALL BUTTON
-=========================== */
-
-.btn-sm{
-
-    padding:12px 26px;
-
-    font-size:14px;
+.response-time{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    color:#0b5ed7;
+    font-weight:600;
 }
 
+.appointment-form{
+    background:#fff;
+    border-radius:24px;
+    padding:45px;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.appointment-form label{
+    display:block;
+    margin-bottom:20px;
+    font-weight:600;
+    color:#334155;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea{
+    width:100%;
+    margin-top:8px;
+    padding:16px;
+    border:1px solid #d8e3f2;
+    border-radius:12px;
+    font-size:16px;
+    font-family:inherit;
+    outline:none;
+    transition:.3s;
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus{
+    border-color:#0b5ed7;
+    box-shadow:0 0 0 4px rgba(11,94,215,.15);
+}
+
+.appointment-form textarea{
+    resize:vertical;
+}
+
+.appointment-submit{
+    width:100%;
+    margin-top:20px;
+    padding:18px;
+    border:none;
+    border-radius:14px;
+    background:#0b5ed7;
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.appointment-submit:hover{
+    background:#0848b4;
+}
+
+.whatsapp-note{
+    margin-top:20px;
+    text-align:center;
+    color:#64748b;
+}
+
+.whatsapp-note a{
+    color:#0b5ed7;
+    font-weight:700;
+}
 
 /* ===========================
-   MOBILE
+   CONTACT
 =========================== */
+
+.contact-list{
+    display:grid;
+    gap:25px;
+    margin-top:35px;
+}
+
+.contact-list>div{
+    display:flex;
+    gap:18px;
+}
+
+.contact-list i{
+    color:#0b5ed7;
+    font-size:24px;
+    width:28px;
+}
+
+.contact-list strong{
+    display:block;
+    margin-bottom:6px;
+    color:#0f172a;
+}
+
+.contact-list a{
+    color:#0b5ed7;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+    background:#061b44;
+    color:#dbe7ff;
+    padding:70px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+    padding-bottom:40px;
+}
+
+.footer h4{
+    color:#fff;
+    margin-bottom:18px;
+}
+
+.footer a{
+    color:#dbe7ff;
+    display:block;
+    margin:10px 0;
+    transition:.3s;
+}
+
+.footer a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.15);
+    margin-top:30px;
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.socials{
+    display:flex;
+    gap:12px;
+}
+
+.socials a{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    display:grid;
+    place-items:center;
+}
+
+/* ===========================
+   FLOATING BUTTONS
+=========================== */
+
+.floating-whatsapp,
+.back-top{
+    position:fixed;
+    right:25px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:#fff;
+    z-index:100;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.floating-whatsapp{
+    bottom:25px;
+    background:#25d366;
+    font-size:26px;
+}
+
+.back-top{
+    bottom:90px;
+    background:#0b5ed7;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+}
+
+.back-top.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.service-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.two-col{
+grid-template-columns:1fr;
+}
+
+.doctor-card{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.hero-content{
+flex-direction:column;
+}
+
+}
 
 @media(max-width:768px){
 
+.nav{
+display:none;
+}
+
+.hero{
+min-height:600px;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.hero-actions{
+flex-direction:column;
+}
+
 .btn{
+width:100%;
+}
 
-    width:100%;
+.form-row{
+grid-template-columns:1fr;
+}
 
-    justify-content:center;
+.service-grid{
+grid-template-columns:1fr;
+}
 
-    padding:15px 20px;
+.gallery-grid{
+grid-template-columns:1fr;
+}
 
-    font-size:15px;
+.gallery-large{
+height:240px;
+}
 
+.gallery-grid img{
+height:240px;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.footer-bottom{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+
+.topbar-inner{
+flex-direction:column;
+padding:10px 0;
+gap:6px;
 }
 
 }
